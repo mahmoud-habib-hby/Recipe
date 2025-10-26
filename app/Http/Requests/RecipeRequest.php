@@ -14,7 +14,6 @@ class RecipeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // يسمح بالحروف العربية، الحروف الإنجليزية والمسافات فقط — يمنع الأرقام والرموز
             'name' => ['required', 'string', 'max:255', 'regex:/^[\p{Arabic}A-Za-z\s]+$/u'],
 
             'ingredients' => 'required|string',
